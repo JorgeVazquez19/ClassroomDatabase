@@ -1,0 +1,57 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "c8b8b1d6ad421c06082d8f2c1533727e",
+    "entities": [
+      {
+        "tableName": "classroom",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idClassroom` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `classroomName` TEXT NOT NULL, `studentNumber` INTEGER NOT NULL, `tutor` TEXT NOT NULL, `classNumber` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "idClassroom",
+            "columnName": "idClassroom",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "classroomName",
+            "columnName": "classroomName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "studentNumber",
+            "columnName": "studentNumber",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tutor",
+            "columnName": "tutor",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "classNumber",
+            "columnName": "classNumber",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "idClassroom"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"c8b8b1d6ad421c06082d8f2c1533727e\")"
+    ]
+  }
+}
